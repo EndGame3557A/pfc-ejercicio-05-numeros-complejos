@@ -10,31 +10,32 @@ class Racional(x: Int, y: Int) {
 
   // Precondición del constructor: el denominador no es cero.
   // Completar
+  require(y != 0, "Denominador no puede ser cero")
 
   // El máximo común divisor de dos enteros no negativos.
   private def mcd(a: Int, b: Int): Int = 0 // Completar
 
   // Numerador y denominador ya normalizados.
-  def numer: Int = 0 // Completar
+    def numer: Int = x
 
-  def denom: Int = 1 // Completar
+    def denom: Int = y
 
-  def +(r: Racional): Racional = new Racional(0, 1) // Completar
+    def +(r: Racional): Racional = new Racional(,) // Completar
 
-  def -(r: Racional): Racional = new Racional(0, 1) // Completar
+    def -(r: Racional): Racional = new Racional(0, 1) // Completar
 
-  def *(r: Racional): Racional = new Racional(0, 1) // Completar
+    def *(r: Racional): Racional = new Racional(0, 1) // Completar
 
-  def /(r: Racional): Racional = new Racional(0, 1) // Completar
+    def /(r: Racional): Racional = new Racional(0, 1) // Completar
 
-  // Si los dos racionales representan el mismo número.
-  def ==(r: Racional): Boolean = false // Completar
+    // Si los dos racionales representan el mismo número.
+    def ==(r: Racional): Boolean = false // Completar
 
-  def <(r: Racional): Boolean = false // Completar
+    def <(r: Racional): Boolean = false // Completar
 
-  // El mayor de los dos.
-  def max(r: Racional): Racional = new Racional(0, 1) // Completar
+    // El mayor de los dos.
+    def max(r: Racional): Racional = new Racional(0, 1) // Completar
 
-  // "n/d", o solo "n" cuando el denominador es 1.
-  override def toString: String = "" // Completar
-}
+    // "n/d", o solo "n" cuando el denominador es 1.
+    override def toString: String = "" // Completar
+  }

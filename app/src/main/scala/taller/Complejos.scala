@@ -7,7 +7,9 @@ package taller
   */
 class Complejos(val r: Double, val i: Double) {
 
-  def +(otro: Complejos): Complejos = new Complejos(0, 0) // Completar
+  def +(otro: Complejos): Complejos = new Complejos(0, 0) {
+
+  }
 
   def -(otro: Complejos): Complejos = new Complejos(0, 0) // Completar
 
