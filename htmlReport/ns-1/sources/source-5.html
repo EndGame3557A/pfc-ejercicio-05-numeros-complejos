@@ -1,0 +1,153 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Rectangulo</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">taller</a>
+</div>
+
+<h1>Coverage Summary for Class: Rectangulo (taller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Rectangulo</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package taller
+&nbsp;
+&nbsp;/** Punto 1. Un rectángulo dado por su base y su altura, ambas enteras. Los
+&nbsp;  * objetos no cambian: rotar y escalar devuelven un rectángulo nuevo.
+&nbsp;  *
+&nbsp;  * Tal como está compila y las pruebas quedan en rojo.
+&nbsp;  */
+<b class="nc">&nbsp;class Rectangulo(b: Int, h: Int) {</b>
+&nbsp;
+&nbsp;  // Selectoras: la base y la altura con que se construyó el rectángulo.
+<b class="nc">&nbsp;  def base: Int = b</b>
+&nbsp;
+&nbsp;  def altura: Int = h// Completar
+<b class="nc">&nbsp;</b>
+&nbsp;  def area: Int = base*altura// Completar
+<b class="nc">&nbsp;</b>
+&nbsp;  def perimetro: Int = 2*(base+altura) // Completar
+<b class="nc">&nbsp;</b>
+&nbsp;  def esCuadrado: Boolean = base == altura // Completar
+<b class="nc">&nbsp;</b>
+&nbsp;  // El rectángulo con base y altura intercambiadas.
+&nbsp;  def rotar: Rectangulo = new Rectangulo(altura, base) // Completar
+<b class="nc">&nbsp;</b>
+&nbsp;  // El rectángulo con los dos lados multiplicados por k.
+&nbsp;  def escalar(k: Int): Rectangulo = new Rectangulo(k*base, k*altura) // Completar
+<b class="nc">&nbsp;</b>
+&nbsp;  // Si este rectángulo entra dentro de otro, tal cual o rotado.
+&nbsp;  def cabeEn(otro: Rectangulo): Boolean =
+&nbsp;    base&lt;=otro.base &amp;&amp; altura&lt;=otro.altura
+<b class="nc">&nbsp;</b>
+&nbsp;  // El de mayor área entre este y otro; con áreas iguales, este.
+&nbsp;  def elMayor(otro: Rectangulo): Rectangulo =
+&nbsp;    new Rectangulo(if (this.area &gt; otro.area) this.base else otro.base, if (this.area &gt; otro.area) this.altura else otro.altura) // Completar
+<b class="nc">&nbsp;</b>
+&nbsp;  // La forma &quot;3x4&quot;: base, la letra x y altura.
+&nbsp;  override def toString: String = base + &quot;x&quot; + altura // Completar
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-10-01 11:26</div>
+</div>
+</body>
+</html>

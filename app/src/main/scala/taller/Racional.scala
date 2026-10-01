@@ -20,7 +20,7 @@ class Racional(x: Int, y: Int) {
 
     def denom: Int = y
 
-    def +(r: Racional): Racional = new Racional(,) // Completar
+    def +(r: Racional): Racional = new Racional(1,1) // Completar
 
     def -(r: Racional): Racional = new Racional(0, 1) // Completar
 

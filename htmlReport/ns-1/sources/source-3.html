@@ -1,0 +1,154 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > Fecha</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">taller</a>
+</div>
+
+<h1>Coverage Summary for Class: Fecha (taller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Fecha</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package taller
+&nbsp;
+&nbsp;/** Punto 2. Una fecha del calendario gregoriano: día, mes y año. El
+&nbsp;  * constructor rechaza las fechas que no existen, así que todo objeto Fecha
+&nbsp;  * es una fecha real.
+&nbsp;  *
+&nbsp;  * Tal como está compila y las pruebas quedan en rojo.
+&nbsp;  */
+<b class="nc">&nbsp;class Fecha(val dia: Int, val mes: Int, val anio: Int) {</b>
+&nbsp;
+&nbsp;  // Precondiciones del constructor: el mes va de 1 a 12 y el día existe en
+&nbsp;  // ese mes de ese año. Una fecha que no cumple lanza
+&nbsp;  // IllegalArgumentException.
+&nbsp;  // Completar
+&nbsp;
+&nbsp;  require(mes &gt;= 1 &amp;&amp; mes &lt;= 12 &amp;&amp; dia &gt;= 1 &amp;&amp; dia &lt;= diasDelMes(mes), &quot;Fecha no válida&quot;)
+<b class="nc">&nbsp;</b>
+&nbsp;  // Si el año es bisiesto en el calendario gregoriano.
+&nbsp;  private def esBisiesto: Boolean = if (anio%4 == 0 &amp;&amp; (anio%100 != 0 || anio%400 == 0)) true else false
+<b class="nc">&nbsp;</b>
+&nbsp;  // Cuántos días tiene el mes m de este año.
+&nbsp;  private def diasDelMes(m: Int): Int = {
+<b class="nc">&nbsp;    m match {</b>
+&nbsp;      case 1 | 3 | 5 | 7 | 8 | 10 | 12 =&gt; 31
+&nbsp;      case 4 | 6 | 9 | 11 =&gt; 30
+<b class="nc">&nbsp;      case 2 if esBisiesto =&gt; 29</b>
+&nbsp;      case 2 =&gt; 28
+&nbsp;    }
+<b class="nc">&nbsp;  }</b>
+&nbsp;
+&nbsp;  // Qué número de día es esta fecha dentro de su año: el 1 de enero es 1.
+<b class="nc">&nbsp;  def diaDelAnio: Int =</b>
+&nbsp;    (1 to mes).map(diasDelMes).sum + dia
+&nbsp;
+<b class="nc">&nbsp;</b>
+&nbsp;
+&nbsp;  // La fecha del día siguiente.
+&nbsp;  def siguiente: Fecha = new Fecha(dia+1, mes, anio)
+&nbsp;
+&nbsp;  // La fecha n días después de esta, con n mayor o igual que 0.
+&nbsp;  def masDias(n: Int): Fecha =
+&nbsp;    new Fecha(dia + n, mes, anio) // Completar
+&nbsp;
+&nbsp;  // Si esta fecha es anterior a otra.
+&nbsp;  def antesDe(otra: Fecha): Boolean =
+&nbsp;    if (diaDelAnio &lt; otra.diaDelAnio) true else false
+&nbsp;
+&nbsp;  // La forma &quot;29/2/2024&quot;: día, mes y año separados por barras.
+&nbsp;  override def toString: String = dia + &quot;/&quot; + mes + &quot;/&quot; + anio // Completar
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2026-10-01 11:26</div>
+</div>
+</body>
+</html>
